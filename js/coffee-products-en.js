@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           li.innerHTML = `
             <a href="../../coffee-card-page-en.html?id=${product.id}" class="coffee-link">
-            <img src="${product.photo}" alt="${product.title}" class="coffee-item-img">
+            <img src="../../${product.photo}" alt="${product.title}" class="coffee-item-img">
             <div class="coffee-item-thumb">
               <h3 class="coffee-item-title">
               ${product.title}

@@ -43,8 +43,8 @@
   margin-bottom: 8px;
 
   font-weight: 200;
-  font-size: clamp(1.375rem, 2.101vw + 0.859rem, 2.75rem);
-line-height: clamp(1.65rem, 2.521vw + 1.031rem, 3.3rem);
+  font-size: clamp(1.25rem, 1.719vw + 0.828rem, 2.375rem);
+  line-height: clamp(1.5rem, 2.063vw + 0.993rem, 2.85rem);
   letter-spacing: -0.02em;
 }
 .coffee-item-desk {
