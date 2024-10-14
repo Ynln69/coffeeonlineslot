@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const productsPerPage = 6;
   let currentPage = 1;
 
-  fetch("../../data/coffee-data-en.json")
+  fetch("../../data/coffee-data.json")
     .then((response) => response.json())
     .then((data) => {
-      let coffeeData = data.products;
-      const coffeesList = document.getElementById("our-products");
+      let coffeeData = data.coffees;
+      const coffeesList = document.getElementById("coffee-products");
       const paginationContainer = document.getElementById("pagination");
 
       if (!coffeesList) {
@@ -17,21 +17,21 @@ document.addEventListener("DOMContentLoaded", () => {
         coffeesList.innerHTML = "";
         const start = (page - 1) * productsPerPage;
         const end = start + productsPerPage;
-        const productsToDisplay = coffeeData.slice(start, end);
+        const coffeeToDisplay = coffeeData.slice(start, end);
 
-        productsToDisplay.forEach((product) => {
+        coffeeToDisplay.forEach((product) => {
           const li = document.createElement("li");
           li.classList.add("coffee-item");
 
           li.innerHTML = `
             <a href="../../coffee-card-page-en.html?id=${product.id}" class="coffee-link">
             <img src="${product.photo}" alt="${product.title}" class="coffee-item-img">
-            <div class="products-item-thumb">
+            <div class="coffee-item-thumb">
               <h3 class="coffee-item-title">
               ${product.title}
               </h3>
               <p class="coffee-item-desk">
-              ${product.title}
+              ${product.description}
               </p>
             </div>
             </a>
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         paginationContainer.innerHTML = "";
 
-        const pageCount = Math.ceil(productsData.length / productsPerPage);
+        const pageCount = Math.ceil(coffeeData.length / productsPerPage);
 
         if (pageCount <= 1) {
           return;
@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
           paginationContainer.appendChild(button);
         }
       }
-
       displayProducts(currentPage);
       setupPagination();
     })
