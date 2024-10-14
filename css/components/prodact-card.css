@@ -26,8 +26,8 @@
 }
 .product-info-title {
   font-weight: 200;
-  font-size: clamp(0.875rem, 1.337vw + 0.547rem, 1.75rem);
-  line-height: clamp(1.05rem, 1.605vw + 0.656rem, 2.1rem);
+  font-size: clamp(1.375rem, 2.101vw + 0.859rem, 2.75rem);
+line-height: clamp(1.65rem, 2.521vw + 1.031rem, 3.3rem);
   letter-spacing: -0.02em;
 }
 .product-info-price {
